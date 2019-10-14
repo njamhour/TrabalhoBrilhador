@@ -8,8 +8,8 @@
 </p>
 
 ## Steps
-1 - git clone
-2 - copy .env.example .env
-3 - php artisan key:generate
-4 - composer require appzcoder/crud-generator
-X - php artisan serve
+- git clone
+- copy .env.example .env
+- php artisan key:generate
+- composer require appzcoder/crud-generator
+- php artisan serve
