@@ -13,3 +13,5 @@
 - php artisan key:generate
 - composer require appzcoder/crud-generator
 - php artisan serve
+
+https://www.techiediaries.com/php-laravel-crud-mysql-tutorial/
