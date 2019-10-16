@@ -13,8 +13,12 @@ class CreateFornecedorsTable extends Migration
      */
     public function up()
     {
-        Schema::create('fornecedors', function (Blueprint $table) {
-            $table->bigIncrements('id');
+        Schema::create('fornecedores', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('nome');
+            $table->string('endereco');
+            $table->integer('pedido')->unsigned();
+            $table->foreign('pedido_id')->references('id')->on('pedidos');
             $table->timestamps();
         });
     }
@@ -26,6 +30,6 @@ class CreateFornecedorsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('fornecedors');
+        Schema::dropIfExists('fornecedores');
     }
 }
