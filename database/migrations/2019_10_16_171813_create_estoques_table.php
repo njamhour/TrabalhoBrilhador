@@ -17,8 +17,8 @@ class CreateEstoquesTable extends Migration
             $table->increments('id');
             $table->dateTime('entrada');
             $table->dateTime('saida');
-            $table->integer('produto_id')->unsigned();
-            $table->foreign('produto_id')->references('id')->on('produtos');
+            //$table->integer('produto_id')->unsigned();
+            //$table->foreign('produto_id')->references('id')->on('produtos');
             $table->timestamps();
         });
     }

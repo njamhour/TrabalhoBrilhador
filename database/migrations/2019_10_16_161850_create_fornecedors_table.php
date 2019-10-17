@@ -17,8 +17,8 @@ class CreateFornecedorsTable extends Migration
             $table->increments('id');
             $table->string('nome');
             $table->string('endereco');
-            $table->integer('pedido')->unsigned();
-            $table->foreign('pedido_id')->references('id')->on('pedidos');
+            //$table->integer('pedido')->unsigned();
+            //$table->foreign('pedido_id')->references('id')->on('pedidos');
             $table->timestamps();
         });
     }

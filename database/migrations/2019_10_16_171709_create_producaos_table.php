@@ -16,8 +16,8 @@ class CreateProducaosTable extends Migration
         Schema::create('producoes', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
-            $table->integer('produto_id')->unsigned();
-            $table->foreign('produto_id')->references('id')->on('produtos');
+            //$table->integer('produto_id')->unsigned();
+            //$table->foreign('produto_id')->references('id')->on('produtos');
             $table->dateTime('prazo');
         });
     }

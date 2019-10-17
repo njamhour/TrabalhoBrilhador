@@ -17,10 +17,10 @@ class CreateProdutosTable extends Migration
             $table->increments('id');
             $table->string('nome');
             $table->integer('quantidade');
-            $table->integer('fornecedor_id')->unsigned();
-            $table->foreign('fornecedor_id')->references('id')->on('fornecedores');
-            $table->integer('categoria_id')->unsigned();
-            $table->foreign('categoria_id')->references('id')->on('categorias');
+            //$table->integer('fornecedor_id')->unsigned();
+            //$table->foreign('fornecedor_id')->references('id')->on('fornecedores');
+            //$table->integer('categoria_id')->unsigned();
+            //$table->foreign('categoria_id')->references('id')->on('categorias');
             $table->timestamps();
         });
     }
