@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
-
-Route::resource('usuarios', 'UsuarioController');
+Route::get('/home', 'UsuarioController@index'); /* CRIAR CONTROLLER PARA HOME */
+//Route::resource('usuarios', 'UsuarioController');

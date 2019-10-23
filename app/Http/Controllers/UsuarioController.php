@@ -15,7 +15,8 @@ class UsuarioController extends Controller
     public function index()
     {
         $usuarios = Usuario::all();
-        return view('usuarios.index', compact('usuarios'));
+        //return view('usuarios', compact('usuarios'));
+        return view('home');
     }
 
     /**
@@ -25,7 +26,7 @@ class UsuarioController extends Controller
      */
     public function create()
     {
-        return view('usuarios.create');
+        return view('novousuario');
     }
 
     /**
@@ -36,19 +37,25 @@ class UsuarioController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
+        $usuario = new Usuario();
+        $usuario->nome = $request->input('nome');
+        $usuario->cpf = $request->input('cpf');
+        $usuario->email = $request->input('email');
+        $usuario->save();
+        return redirect('/usuarios')->with('success', 'Salvo');
+        /*$request->validate([
             'nome' => 'required',
             'cpf' => 'required',
             'email' => 'required'
-        ]);
+        ]);*/
 
-        $usuario = new Usuario([
+        /*$usuario = new Usuario([
             'nome' => $request->get('nome'),
             'cpf' => $request->get('cpf'),
             'email' => $request->get('email')
         ]);
         $usuario->save();
-        return redirect('/usuarios')->with('succecss', 'Usuario salvo!');
+        return redirect('/usuarios')->with('succecss', 'Usuario salvo!');*/
     }
 
     /**
@@ -71,7 +78,12 @@ class UsuarioController extends Controller
     public function edit($id)
     {
         $usuario = Usuario::find($id);
-        return view('usuarios.edit', compact('usuarios'));
+        if(isset($usuario))
+        {
+            return view('editarusuario', compact('usuario'));
+        }
+        return redirect('/usuarios');
+        //return view('usuarios.edit', compact('usuarios'));
     }
 
     /**
@@ -83,7 +95,7 @@ class UsuarioController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $request->validate([
+        /*$request->validate([
             'nome' => 'required',
             'email' => 'required',
             'cpf' => 'required'
@@ -94,8 +106,16 @@ class UsuarioController extends Controller
         $usuario->cpf = $request->get('cpf');
         $usuario->email = $request->get('email');
         $usuario->save();
-        return redirect('/usuarios')->with('success', 'Usuario atualizado!');
-
+        return redirect('/usuarios')->with('success', 'Usuario atualizado!');*/
+        $usuario = Usuario::find($id);
+        if(isset($usuario))
+        {
+            $usuario->nome = $request->input('nome');
+            $usuario->cpf = $request->input('cpf');
+            $usuario->email = $request->input('email');
+            $usuario->save();
+        }
+        return redirect('/usuarios');
     }
 
     /**
@@ -107,8 +127,11 @@ class UsuarioController extends Controller
     public function destroy($id)
     {
         $usuario = Contact::find($id);
-        $usuario->delete();
+        if(isset($usuario)){
+            $usuario->delete();
+        }
+        return redirect('/usuarios');
 
-        return redirect('/usuarios')->with('success', 'Usuario deletado!');
+        //return redirect('/usuarios')->with('success', 'Usuario deletado!');
     }
 }
