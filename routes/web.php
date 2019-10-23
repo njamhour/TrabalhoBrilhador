@@ -11,8 +11,11 @@
 |
 */
 
-Route::get('/', function () {
+/*Route::get('/', function () {
     return view('index');
-});
-Route::get('/home', 'UsuarioController@index'); /* CRIAR CONTROLLER PARA HOME */
+});*/
+Route::get('/', 'UsuarioController@home');
+Route::get('/usuarios', 'UsuarioController@index');
+Route::get('/layout', 'UsuarioController@layout');
+//Route::get('/home', 'UsuarioController@index'); /* CRIAR CONTROLLER PARA HOME */
 //Route::resource('usuarios', 'UsuarioController');

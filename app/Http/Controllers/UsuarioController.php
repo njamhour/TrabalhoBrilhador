@@ -12,11 +12,22 @@ class UsuarioController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function home()
+    {
+        return view('home');
+    }
+
+    public function layout()
+    {
+        return view('/usuarios/layoutpadrao');
+    }
+
+
     public function index()
     {
         $usuarios = Usuario::all();
         //return view('usuarios', compact('usuarios'));
-        return view('home');
+        return view('/usuarios/index');
     }
 
     /**
