@@ -9,11 +9,18 @@
         <th>Nome</th>
         <th>CPF</th>
         <th>Email</th>
+        <th>Ações</th>
     </tr>
-        @foreach ($usuarios as $usuarios)
-        {
-            
-        }
+        @foreach ($usuarios as $usuario)
+        <tr>
+            <td>{{ $usuario->id }}</td>
+            <td>{{ $usuario->nome }}</td>
+            <td>{{ $usuario->cpf }}</td>
+            <td>{{ $usuario->email }}</td>
+            <td><a href="{{ route('usuarios.editar', $usuario->id )}}" class="btn btn-warning">Editar</a></td>
+            <td><a href="{{ route('usuarios.remover', $usuario->id )}}" class="btn btn-danger">Remover</a></td>
+        </tr>
+        @endforeach
     </table>
 </div>
 
