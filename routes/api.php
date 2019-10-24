@@ -17,6 +17,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/usuarios', 'UsuarioController@indexJson');
+//Route::get('/usuarios/usuarios', 'UsuarioController@indexJson');
+Route::resource('/usuarios/usuarios', 'ControladorProduto');
 
 //Route::resource('/produtos', 'ControladorProduto');

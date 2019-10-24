@@ -12,6 +12,12 @@ class UsuarioController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function indexJson()
+    {
+        $usuarios = Usuarios::all();
+        return json_encode($usuarios);
+    }
+
     public function home()
     {
         return view('home');

@@ -30,9 +30,9 @@
 <div class="modal" tabindex="-1" role="dialog" id="dlgUsuarios">
     <div class="modal-dialog" role="document"> 
         <div class="modal-content">
-            <form class="form-horizontal" id="formProduto">
+            <form class="form-horizontal" id="formUsuarios">
                 <div class="modal-header">
-                    <h5 class="modal-title">Novo produto</h5>
+                    <h5 class="modal-title">Novo Usuario</h5>
                 </div>
                 <div class="modal-body">
 
