@@ -8,10 +8,12 @@
 </p>
 
 ## Steps
-- git clone
+- install composer (https://getcomposer.org/download/)
+- git clone https://github.com/njamhour/TrabalhoBrilhador
+- npm install
+- composer install
 - copy .env.example .env
 - php artisan key:generate
-- composer require appzcoder/crud-generator
 - php artisan serve
 
 https://www.techiediaries.com/php-laravel-crud-mysql-tutorial/

@@ -13,7 +13,7 @@ class ProducaoController extends Controller
      */
     public function index()
     {
-        //
+        return view('/producoes/index');
     }
 
     /**
