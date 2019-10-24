@@ -26,7 +26,7 @@ class UsuarioController extends Controller
     public function index()
     {
         $usuarios = Usuario::all();
-        return view('/usuarios/index', compact('usuarios'));
+        return view('/usuarios/usuarios');
     }
 
     /**
@@ -36,7 +36,7 @@ class UsuarioController extends Controller
      */
     public function create()
     {
-        return view('novousuario');
+        return view('/usuarios/criar');
     }
 
     /**

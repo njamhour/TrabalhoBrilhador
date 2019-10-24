@@ -21,6 +21,8 @@ Route::get('/layout', 'UsuarioController@layout');
 
 /* USUARIO */
 Route::get('/usuarios', 'UsuarioController@index');
+Route::get('/usuarios/novo', 'UsuarioController@create');
+Route::post('/usuarios', 'UsuarioController@store');
 
 /* PRODUTO */
 Route::get('/produtos', 'ProdutoController@index');
